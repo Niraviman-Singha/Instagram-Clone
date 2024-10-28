@@ -4,46 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="15dp"
-    tools:context=".SignUpActivity">
+    android:padding="25dp"
+    tools:context=".LoginActivity">
 
-    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/add_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="180dp"
-        android:src="@drawable/user"
-        app:civ_border_color="#83D523"
-        app:civ_border_width="2dp">
+        android:layout_marginTop="50dp"
+        android:src="@drawable/instagram">
 
-    </de.hdodenhof.circleimageview.CircleImageView>
+    </ImageView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Name"
-        app:endIconMode="clear_text"
-        app:hintTextColor="@color/black">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameET"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:textColor="@color/black">
-
-
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:hint="Email"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/black">
@@ -87,7 +65,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:backgroundTint="#F2FAE9"
-        android:text="Register"
+        android:text="Login"
         android:textColor="#03A9F4"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -98,19 +76,22 @@
 
     </com.google.android.material.button.MaterialButton>
 
-
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Already have an account Login? "
-        android:textAlignment="center"
-        android:textColor="#50041E"
-        android:textSize="15sp">
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Create new account"
+        android:textColor="#03A9F4"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:strokeColor="#03A9F4"
+        app:strokeWidth="2dp">
 
 
-    </TextView>
+    </com.google.android.material.button.MaterialButton>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
