@@ -25,9 +25,7 @@ class SignUpActivity : AppCompatActivity() {
     private val launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
             uploadImage(uri, USER_PROFILE_FOLDER) {
-                if (it == null) {
-
-                } else {
+                if (it != null) {
                     user.image = it
                     binding.addImage.setImageURI(uri)
                 }
@@ -50,15 +48,15 @@ class SignUpActivity : AppCompatActivity() {
                 binding.signUpBtn.text = "Update Profile"
                 Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid)
                     .get().addOnSuccessListener {
-                    user = it.toObject<User>()!!
-                    if (!user.image.isNullOrEmpty()) {
-                        Picasso.get().load(user.image).into(binding.addImage)
+                        user = it.toObject<User>()!!
+                        if (!user.image.isNullOrEmpty()) {
+                            Picasso.get().load(user.image).into(binding.addImage)
 
-                    }
+                        }
                         binding.nameET.setText(user.name)
                         binding.emailET.setText(user.email)
                         binding.passwordET.setText(user.password)
-                }
+                    }
             }
         }
 
