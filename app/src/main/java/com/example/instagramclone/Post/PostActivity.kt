@@ -40,11 +40,16 @@ class PostActivity : AppCompatActivity() {
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         binding.toolbar.setNavigationOnClickListener {
+            startActivity(Intent(this@PostActivity, HomeActivity::class.java))
             finish()
         }
 
         binding.selectImage.setOnClickListener {
             launcher.launch("image/*")
+        }
+        binding.cancelBtn.setOnClickListener {
+            startActivity(Intent(this@PostActivity, HomeActivity::class.java))
+            finish()
         }
 
         binding.postBtn.setOnClickListener {
